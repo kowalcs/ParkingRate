@@ -1,17 +1,15 @@
-package pl.touk.service
+package pl.touk.repository
 
-import pl.touk.repository.InMemoryDriverRepository
 import spock.lang.Specification
 import spock.lang.Unroll
 
 import java.time.LocalDateTime
 import java.time.ZoneId
 
-class InMemoryDriverRepositorySec extends Specification {
+class InMemoryDriverRepositorySpec extends Specification {
 
     @Unroll
     def "should check two dates is same: '#execNr'"() {
-        given:
         def first = LocalDateTime.ofInstant((new Date(year1, month1, day1)).toInstant(), ZoneId.systemDefault());
         def second = LocalDateTime.ofInstant((new Date(year2, month2, day2)).toInstant(), ZoneId.systemDefault());
 
